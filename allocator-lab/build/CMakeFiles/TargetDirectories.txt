@@ -1,0 +1,7 @@
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/allocator-lab/build/CMakeFiles/allocation_only.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/allocator-lab/build/CMakeFiles/alloc_free.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/allocator-lab/build/CMakeFiles/burst_cleanup.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/allocator-lab/build/CMakeFiles/random_lifetime.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/allocator-lab/build/CMakeFiles/mixed_sizes.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/allocator-lab/build/CMakeFiles/edit_cache.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/allocator-lab/build/CMakeFiles/rebuild_cache.dir

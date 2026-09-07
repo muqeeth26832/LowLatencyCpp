@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/burst_cleanup.dir/link.d CMakeFiles/burst_cleanup.dir/benchmarks/burst_cleanup.cpp.o -o burst_cleanup  /usr/local/lib/libbenchmark.a -lrt
