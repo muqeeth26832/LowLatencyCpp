@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -march=native -Wl,--dependency-file=CMakeFiles/contention.dir/link.d CMakeFiles/contention.dir/benchmarks/contention.cpp.o -o contention  /usr/local/lib/libbenchmark.a -lrt

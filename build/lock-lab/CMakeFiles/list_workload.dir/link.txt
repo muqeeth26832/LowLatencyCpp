@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -march=native -Wl,--dependency-file=CMakeFiles/list_workload.dir/link.d CMakeFiles/list_workload.dir/benchmarks/list_workload.cpp.o -o list_workload  /usr/local/lib/libbenchmark.a -lrt

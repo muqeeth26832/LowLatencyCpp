@@ -1,54 +1,55 @@
 ## Building Blocks for LowLatencyCPP
 
 This repo is where you can find the right tool for the trade.
-All about LowLatencyCPP header only code which one can use based on their needs.
+All about LowLatencyCPP header-only code which one can use based on their needs.
 
-Currently we have
+Each lab is self-contained: `include/` for header-only implementations,
+`benchmarks/` for Google Benchmark sources, `notes/` for measured results
+and interpretation.
 
-## Allocator_Lab
+## Build everything
 
-where we compare 3 allocators to our general purpose new and delete
+```bash
+cmake -B build && cmake --build build -j
+```
 
----
+## Current modules
 
-In future we may have low latency queues. other things like multi threading locks etc..
-Quant related so we may do
-Network related stuff ? maybe benchmark a kernel bypass maybe ?
-Template Meta progamming. arguments forwarding.
+### `allocator-lab`
 
-try implementing vector myself. unique ptr etc.. for learning. linked list with smart pointers
-copy vs move
-restrict keyword -> pointer not overlapping
+Arena, slab and memory-pool allocators vs. `new`/`delete` across allocation,
+alloc+free, burst, mixed-size and random-lifetime workloads.
 
-vitual indexed , physically mapped tables. 
+### `lock-lab`
 
--> pointer deref -> tlb -> cache
+TAS, TTAS, CLH and MCS locks plus a `std::mutex` baseline — empty-CS
+contention, CS-size scaling, and a shared-list workload. Shows TAS's RMW
+storm, TTAS's fix, and when futex-based blocking beats spinning.
 
-L1 cache optimziation by using virutally indexed. See gfg article
+### `queue-lab`
 
+Mutex ring buffer, Herlihy-Wing atomic queue, and a cache-line-padded SPSC
+ring buffer. Single-thread latency plus multi-thread throughput; SPSC ends
+up ~24× faster than the mutex queue and orders of magnitude faster than the
+"non-blocking" HW queue.
 
-write unique pointer.
-Write linked list with smart pointers
+### `register-lab`
 
+MRSW regular register (bool vs. atomic toggle arrays) — linear read/write
+scan cost, read scalability, and the 1-writer+N-reader shape.
 
-doubly linked list -> make cache 
+### `scheduling-lab`
 
-LRU cahce with doubly linked list + hash map 
+Static (SAM) vs. dynamic (DAM) work allocation with an atomic chunk counter
+over a CPU-bound scan — where the ~30% dynamic wins.
 
-add smart pointer
+## Roadmap
 
-PERF tool -> a cache miss is 3ns
+- Low-latency queues: lock-free MPSC/MPMC variants
+- Cache/false-sharing labs (vector vs. linked list, `alignas(64)`)
+- Data-structure patterns for hot-path iteration (active instrument sets,
+  swap-and-pop vs. boolean flag vs. pointer indirection)
+- Networking: TCP vs. UDP latency, market-data feed shapes
 
-Logging framework. -> fast
-
-NETWORKS -
-
-TCP -> 3 way -> why ?
-
-what is TCP, UDP, congestion control, why, what .
-
-kernel bypass.
-
-SPSC queues. producer consumer queues
-templates meta programming -> simple needed
-argument forwarding.
+The `PCP_assgs/` directory holds the original course assignments these
+labs were distilled from.

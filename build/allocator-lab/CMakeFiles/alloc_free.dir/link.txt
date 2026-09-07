@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/alloc_free.dir/link.d CMakeFiles/alloc_free.dir/benchmarks/alloc_free.cpp.o -o alloc_free  /usr/local/lib/libbenchmark.a -lrt

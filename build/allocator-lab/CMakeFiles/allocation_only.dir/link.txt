@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/allocation_only.dir/link.d CMakeFiles/allocation_only.dir/benchmarks/allocation_only.cpp.o -o allocation_only  /usr/local/lib/libbenchmark.a -lrt

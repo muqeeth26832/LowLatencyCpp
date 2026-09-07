@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -march=native -Wl,--dependency-file=CMakeFiles/register.dir/link.d CMakeFiles/register.dir/benchmarks/register.cpp.o -o register  /usr/local/lib/libbenchmark.a -lrt

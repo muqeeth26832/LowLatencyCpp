@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -march=native -Wl,--dependency-file=CMakeFiles/sam_vs_dam.dir/link.d CMakeFiles/sam_vs_dam.dir/benchmarks/sam_vs_dam.cpp.o -o sam_vs_dam  /usr/local/lib/libbenchmark.a -lrt

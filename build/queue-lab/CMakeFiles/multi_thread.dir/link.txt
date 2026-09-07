@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -march=native -Wl,--dependency-file=CMakeFiles/multi_thread.dir/link.d CMakeFiles/multi_thread.dir/benchmarks/multi_thread.cpp.o -o multi_thread  /usr/local/lib/libbenchmark.a -lrt
