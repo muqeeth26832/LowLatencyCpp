@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/bulk_lifecycle.dir/link.d CMakeFiles/bulk_lifecycle.dir/benchmarks/bulk_lifecycle.cpp.o -o bulk_lifecycle  /usr/local/lib/libbenchmark.a -lrt

@@ -6,7 +6,8 @@
 		"/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/queue-lab/cmake_install.cmake",
 		"/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/register-lab/cmake_install.cmake",
 		"/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/scheduling-lab/cmake_install.cmake",
-		"/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/allocator-lab/cmake_install.cmake"
+		"/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/allocator-lab/cmake_install.cmake",
+		"/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

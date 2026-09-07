@@ -21,3 +21,11 @@
 /home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/allocator-lab/CMakeFiles/mixed_sizes.dir
 /home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/allocator-lab/CMakeFiles/edit_cache.dir
 /home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/allocator-lab/CMakeFiles/rebuild_cache.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/CMakeFiles/iterate.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/CMakeFiles/insert_only.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/CMakeFiles/remove_only.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/CMakeFiles/bulk_lifecycle.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/CMakeFiles/mixed_churn.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/CMakeFiles/realistic.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/CMakeFiles/edit_cache.dir
+/home/muqeeth26832/Desktop/11_placements/placement/project/LowLatencyCpp/build/active-set-lab/CMakeFiles/rebuild_cache.dir

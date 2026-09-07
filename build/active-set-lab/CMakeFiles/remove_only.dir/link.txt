@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/remove_only.dir/link.d CMakeFiles/remove_only.dir/benchmarks/remove_only.cpp.o -o remove_only  /usr/local/lib/libbenchmark.a -lrt

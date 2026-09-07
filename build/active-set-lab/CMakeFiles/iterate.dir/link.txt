@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG -Wl,--dependency-file=CMakeFiles/iterate.dir/link.d CMakeFiles/iterate.dir/benchmarks/iterate.cpp.o -o iterate  /usr/local/lib/libbenchmark.a -lrt

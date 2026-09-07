@@ -259,6 +259,84 @@ mixed_sizes/fast:
 	$(MAKE) $(MAKESILENT) -f allocator-lab/CMakeFiles/mixed_sizes.dir/build.make allocator-lab/CMakeFiles/mixed_sizes.dir/build
 .PHONY : mixed_sizes/fast
 
+#=============================================================================
+# Target rules for targets named iterate
+
+# Build rule for target.
+iterate: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 iterate
+.PHONY : iterate
+
+# fast build rule for target.
+iterate/fast:
+	$(MAKE) $(MAKESILENT) -f active-set-lab/CMakeFiles/iterate.dir/build.make active-set-lab/CMakeFiles/iterate.dir/build
+.PHONY : iterate/fast
+
+#=============================================================================
+# Target rules for targets named insert_only
+
+# Build rule for target.
+insert_only: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 insert_only
+.PHONY : insert_only
+
+# fast build rule for target.
+insert_only/fast:
+	$(MAKE) $(MAKESILENT) -f active-set-lab/CMakeFiles/insert_only.dir/build.make active-set-lab/CMakeFiles/insert_only.dir/build
+.PHONY : insert_only/fast
+
+#=============================================================================
+# Target rules for targets named remove_only
+
+# Build rule for target.
+remove_only: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 remove_only
+.PHONY : remove_only
+
+# fast build rule for target.
+remove_only/fast:
+	$(MAKE) $(MAKESILENT) -f active-set-lab/CMakeFiles/remove_only.dir/build.make active-set-lab/CMakeFiles/remove_only.dir/build
+.PHONY : remove_only/fast
+
+#=============================================================================
+# Target rules for targets named bulk_lifecycle
+
+# Build rule for target.
+bulk_lifecycle: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 bulk_lifecycle
+.PHONY : bulk_lifecycle
+
+# fast build rule for target.
+bulk_lifecycle/fast:
+	$(MAKE) $(MAKESILENT) -f active-set-lab/CMakeFiles/bulk_lifecycle.dir/build.make active-set-lab/CMakeFiles/bulk_lifecycle.dir/build
+.PHONY : bulk_lifecycle/fast
+
+#=============================================================================
+# Target rules for targets named mixed_churn
+
+# Build rule for target.
+mixed_churn: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mixed_churn
+.PHONY : mixed_churn
+
+# fast build rule for target.
+mixed_churn/fast:
+	$(MAKE) $(MAKESILENT) -f active-set-lab/CMakeFiles/mixed_churn.dir/build.make active-set-lab/CMakeFiles/mixed_churn.dir/build
+.PHONY : mixed_churn/fast
+
+#=============================================================================
+# Target rules for targets named realistic
+
+# Build rule for target.
+realistic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 realistic
+.PHONY : realistic
+
+# fast build rule for target.
+realistic/fast:
+	$(MAKE) $(MAKESILENT) -f active-set-lab/CMakeFiles/realistic.dir/build.make active-set-lab/CMakeFiles/realistic.dir/build
+.PHONY : realistic/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -269,13 +347,19 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... alloc_free"
 	@echo "... allocation_only"
+	@echo "... bulk_lifecycle"
 	@echo "... burst_cleanup"
 	@echo "... contention"
+	@echo "... insert_only"
+	@echo "... iterate"
 	@echo "... list_workload"
+	@echo "... mixed_churn"
 	@echo "... mixed_sizes"
 	@echo "... multi_thread"
 	@echo "... random_lifetime"
+	@echo "... realistic"
 	@echo "... register"
+	@echo "... remove_only"
 	@echo "... sam_vs_dam"
 	@echo "... single_thread"
 .PHONY : help

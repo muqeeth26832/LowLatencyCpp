@@ -43,12 +43,21 @@ scan cost, read scalability, and the 1-writer+N-reader shape.
 Static (SAM) vs. dynamic (DAM) work allocation with an atomic chunk counter
 over a CPU-bound scan — where the ~30% dynamic wins.
 
+### `active-set-lab`
+
+9 ways to track which instruments are active and iterate only them:
+`std::set`/`unordered_set` baselines, byte/bit flag sweeps, bitmask (bitboard),
+and swap-and-pop dense sets (id, pointer, by-value) plus an intrusive list
+and a flat open-addressing hash set.
+Six workloads: sparse/dense iteration, insert-only, remove-only, bulk
+lifecycle, pure churn, and a realistic churn+sweep tick. Shows the core
+trade-off: dense prefix = O(active) sequential iteration but per-op movement;
+flags bitmask = O(1) mutation but O(N) scan; node containers lose everywhere.
+
 ## Roadmap
 
 - Low-latency queues: lock-free MPSC/MPMC variants
 - Cache/false-sharing labs (vector vs. linked list, `alignas(64)`)
-- Data-structure patterns for hot-path iteration (active instrument sets,
-  swap-and-pop vs. boolean flag vs. pointer indirection)
 - Networking: TCP vs. UDP latency, market-data feed shapes
 
 The `PCP_assgs/` directory holds the original course assignments these
