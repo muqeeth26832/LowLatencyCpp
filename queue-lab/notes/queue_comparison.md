@@ -42,12 +42,21 @@ to the tail on each pop, and allocates a heap node per push.
 
 | Configuration | Items | Time |
 |---------------|-------|------|
-| `SPSC` 1 producer + 1 consumer | 65 536 pairs | 1.13 ms (~440 M pairs/s) |
-| `SPSC` 1 producer + 1 consumer | 1 048 576 pairs | 22 ms (~5.8 G pairs/s) |
+| `SPSC` 1 producer + 1 consumer | 65 536 items | 0.88 ms (~75 M items/s) |
+| `SPSC` 1 producer + 1 consumer | 262 144 items | 4.6 ms (~57 M items/s) |
+| `SPSC` 1 producer + 1 consumer | 1 048 576 items | 15.4 ms (~68 M items/s) |
 | `LockQueue` 4 prod + 4 cons | 1 048 576 ops | 732 ms (~1.4 M ops/s) |
 | `LockQueue` 8 prod + 8 cons | 1 048 576 ops | 1013 ms (~1.0 M ops/s) |
 | `HWQueue` 4 prod + 4 cons | 8192 ops | 155 ms (~53 k ops/s) |
 | `HWQueue` 8 prod + 8 cons | 8192 ops | 105 ms (~78 k ops/s) |
+
+SPSC rows are wall-clock (`UseRealTime()`, mean of 5 repetitions, threads
+not pinned; includes thread start/join). An earlier version of this table
+reported ~5.8 G pairs/s: without `UseRealTime()` Google Benchmark divides by
+the *main* thread's CPU time, which only spawns and joins the workers
+(~0.16 ms), inflating throughput ~100x. 5.8 G/s would be ~0.17 ns per item,
+well below the cost of a single cross-core cache-line transfer, which is
+what exposed the bug.
 
 `HWQueue` was run at 8192 ops: its optimism bubble bursts above that.
 `LockQueue` plateaus with thread count because every op serializes on the

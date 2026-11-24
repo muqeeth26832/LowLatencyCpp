@@ -118,14 +118,18 @@ static void BM_MPMC_Throughput(benchmark::State& state)
 using LockQueueQ = LockQueue<std::uint64_t, 1 << 20>;
 using HWQueueQ   = HWQueue<std::uint64_t, 1 << 14>;
 
-BENCHMARK(BM_SPSC_Throughput)->RangeMultiplier(4)->Range(1 << 16, 1 << 20);
+// UseRealTime(): the work runs on worker threads, so the main thread's CPU
+// time is ~0 and would inflate items_per_second by ~100x.
+BENCHMARK(BM_SPSC_Throughput)->RangeMultiplier(4)->Range(1 << 16, 1 << 20)->UseRealTime();
 
 BENCHMARK_TEMPLATE(BM_MPMC_Throughput, LockQueueQ)
     ->Args({1 << 20, 4})
-    ->Args({1 << 20, 8});
+    ->Args({1 << 20, 8})
+    ->UseRealTime();
 
 BENCHMARK_TEMPLATE(BM_MPMC_Throughput, HWQueueQ)
     ->Args({1 << 13, 4})
-    ->Args({1 << 13, 8});
+    ->Args({1 << 13, 8})
+    ->UseRealTime();
 
 BENCHMARK_MAIN();

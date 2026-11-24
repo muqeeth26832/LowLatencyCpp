@@ -29,8 +29,8 @@ storm, TTAS's fix, and when futex-based blocking beats spinning.
 ### `queue-lab`
 
 Mutex ring buffer, Herlihy-Wing atomic queue, and a cache-line-padded SPSC
-ring buffer. Single-thread latency plus multi-thread throughput; SPSC ends
-up ~24× faster than the mutex queue and orders of magnitude faster than the
+ring buffer. Single-thread latency plus multi-thread throughput; SPSC push/pop
+latency is ~24× lower than the mutex queue (~70 M items/s cross-thread) and orders of magnitude faster than the
 "non-blocking" HW queue.
 
 ### `register-lab`
@@ -45,7 +45,7 @@ over a CPU-bound scan — where the ~30% dynamic wins.
 
 ### `active-set-lab`
 
-9 ways to track which instruments are active and iterate only them:
+10 ways to track which instruments are active and iterate only them:
 `std::set`/`unordered_set` baselines, byte/bit flag sweeps, bitmask (bitboard),
 and swap-and-pop dense sets (id, pointer, by-value) plus an intrusive list
 and a flat open-addressing hash set.
